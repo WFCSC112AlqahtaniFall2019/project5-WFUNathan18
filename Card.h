@@ -9,8 +9,14 @@ const string ranks[] = {"Ace","2","3","4","5","6","7","8","9","10","Jack","King"
 const string suits[] = {"Clubs","Diamonds","Hearts","Spades"};
 
 class Card {
-
+public:
+    Card();
+    Card(int initNumRank, int initNumSuit);
+    bool operator> (Card c); //Overloaded Comparison Operator
+    string PrintCardName();
+private:
+    int nRank;
+    int nSuit;
 };
-
 
 #endif //BLINDMANSBLUFF_CARD_H
