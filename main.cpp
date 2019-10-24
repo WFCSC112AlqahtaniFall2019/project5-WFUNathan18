@@ -1,8 +1,14 @@
+// Author: Nathan Maynard
+// Course: CSC 112 Section B (Fall 2019)
+// Project: Project 5 - BlindMansBluff
+// Due Date: 3:30pm, Oct. 24, 2019
+
 #include <iostream>
 #include <string>
 #include <cctype>
 #include "Card.h"
 #include "Deck.h"
+
 using namespace std;
 
 int main() {
