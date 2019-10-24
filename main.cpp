@@ -9,19 +9,22 @@ int main() {
     cout << "Welcome to Blind Man's Bluff" << endl << endl;
     bool play, invalid, guessedHigher;
     string response;
-    int compValue, userValue, nWin = 0, nLoss = 0, nTie = 0;
-    Deck cardDeck(52); //Deck of 52 Cards
+    int nWin = 0, nLoss = 0, nTie = 0;
+    Deck cardDeck; //Deck of 52 Cards
+    Card compCard, userCard;
     srand(time(NULL));
+
+    cardDeck.PopDeck(); //Populate Deck
+    cardDeck.ShufDeck(); //Shuffle Deck
 
     play = true;
     while(play) {
         // assign values to computer and user
-        cardDeck.PopDeck(cardDeck);
-        compCard = ;
-        userCard = rand() % 52;
+        compCard = cardDeck.RemCard();
+        userCard = cardDeck.RemCard();
 
         // get user's bet
-        cout << "Computer's value is " << compValue << endl;
+        cout << "Computer's card is a " << compCard.PrintCardName() << endl;
         invalid = true;
         while(invalid) {
             cout << "Do you think your number is higher or lower? (H/L)" << endl;
@@ -42,17 +45,17 @@ int main() {
         }
 
         // determine outcome
-        if((compValue < userValue && guessedHigher) || (compValue > userValue && !guessedHigher)) {
+        if((compCard < userCard && guessedHigher) || (compCard > userCard && !guessedHigher)) {
             cout << "Great! You're right:" << endl;
             nWin++;
-        } else if((compValue > userValue && guessedHigher) || (compValue < userValue && !guessedHigher)) {
+        } else if((compCard > userCard && guessedHigher) || (compCard < userCard && !guessedHigher)) {
             cout << "Sorry, you're wrong:" << endl;
             nLoss++;
         } else {
             cout << "It's a tie:" << endl;
             nTie++;
         }
-        cout << "\tyour value is " << userValue << endl;
+        cout << "\tyour value is " << userCard.PrintCardName() << endl;
 
         // ask user to play again
         invalid = true;

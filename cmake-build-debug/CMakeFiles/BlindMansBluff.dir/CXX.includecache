@@ -6,31 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/Nathan/CLionProjects/project5-WFUNathan18/Card.cpp
-Card.h
-/Users/Nathan/CLionProjects/project5-WFUNathan18/Card.h
-
 /Users/Nathan/CLionProjects/project5-WFUNathan18/Card.h
 string
 -
 
 /Users/Nathan/CLionProjects/project5-WFUNathan18/Deck.cpp
-Deck.h
-/Users/Nathan/CLionProjects/project5-WFUNathan18/Deck.h
-
-/Users/Nathan/CLionProjects/project5-WFUNathan18/Deck.h
-Card.h
-/Users/Nathan/CLionProjects/project5-WFUNathan18/Card.h
-
-/Users/Nathan/CLionProjects/project5-WFUNathan18/main.cpp
 iostream
 -
-string
+ctime
 -
-cctype
--
-Card.h
-/Users/Nathan/CLionProjects/project5-WFUNathan18/Card.h
 Deck.h
 /Users/Nathan/CLionProjects/project5-WFUNathan18/Deck.h
+
+/Users/Nathan/CLionProjects/project5-WFUNathan18/Deck.h
+Card.h
+/Users/Nathan/CLionProjects/project5-WFUNathan18/Card.h
 

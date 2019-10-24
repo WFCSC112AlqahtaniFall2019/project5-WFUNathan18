@@ -13,6 +13,7 @@ public:
     Card();
     Card(int initNumRank, int initNumSuit);
     bool operator> (Card c); //Overloaded Comparison Operator
+    bool operator< (Card c); //Ovl. Comp. Op.
     string PrintCardName();
 private:
     int nRank;

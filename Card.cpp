@@ -25,6 +25,18 @@ bool Card::operator>(Card c) {
     }
 }
 
+bool Card::operator<(Card c) {
+    if (this->nRank < c.nRank) {
+        return true;
+    }
+    else if ((this->nRank == c.nRank) && (this->nSuit < c.nSuit)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 string Card::PrintCardName() {
     return ranks[nRank] + " of " + suits[nSuit];
 }

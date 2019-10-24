@@ -5,15 +5,14 @@
 
 class Deck {
 public:
-    Deck(int aSize); //Constructor
+    Deck(); //Constructor
     ~Deck(); //Destructor
     Deck(const Deck& origDeck); //Copy Constructor
-    Deck& operator=(const Deck& rhs); //Copy Assignment Operator
     Deck& operator=(Deck rhs); //Copy Assignment Operator
-    void PopDeck(Deck d); //Populate the Deck
-    void ShufDeck(Deck d); //Shuffle the Deck
-    Card RemCard(Deck d); //Remove a Card
-    bool AddCard(int suit, int rank, Deck d); //Add a Card
+    void PopDeck(); //Populate the Deck
+    void ShufDeck(); //Shuffle the Deck
+    Card RemCard(); //Remove a Card
+    bool AddCard(Card c); //Add a Card
 private:
     Card* cards;
     int arraySize;
