@@ -10,13 +10,15 @@ int main() {
     bool play, invalid, guessedHigher;
     string response;
     int compValue, userValue, nWin = 0, nLoss = 0, nTie = 0;
+    Deck cardDeck(52); //Deck of 52 Cards
     srand(time(NULL));
 
     play = true;
     while(play) {
         // assign values to computer and user
-        compValue = rand() % 52;
-        userValue = rand() % 52;
+        cardDeck.PopDeck(cardDeck);
+        compCard = ;
+        userCard = rand() % 52;
 
         // get user's bet
         cout << "Computer's value is " << compValue << endl;
