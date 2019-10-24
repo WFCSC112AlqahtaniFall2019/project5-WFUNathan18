@@ -4,6 +4,7 @@
 using namespace std;
 
 Deck::Deck() {
+    cout << "-Calling Constructor" << endl;
     arraySize=52;
     cardsLeft=0;
     cards= new Card[52];
@@ -17,19 +18,11 @@ Deck::~Deck() {
 Deck::Deck(const Deck& origDeck) {
     cout << "-Calling Copy Constructor-" << endl;
     cards = new Card[arraySize];
-    //*cards = *(origDeck.cards);
     for (int i = 0; i < origDeck.arraySize; i++) {
         cards[i] = origDeck.cards[i];
     }
     arraySize = origDeck.arraySize;
 }
-
-/*Deck& Deck::operator=(const Deck& rhs) {
-    cout << "-Calling Assignment Operator-" << endl;
-    Deck temp(rhs); //Copy Constructor
-    swap(cards, temp.cards);
-    return *this;
-}*/
 
 Deck& Deck::operator=(Deck rhs) {
     cout << "-Calling Assignment Operator" << endl;
@@ -48,22 +41,20 @@ void Deck::PopDeck() {
 }
 
 void Deck::ShufDeck() {
+    cout << "-Shuffling Deck-" << endl;
     srand(time(0));
     for (int i = 0; i < (cardsLeft ^ 2); i++) {
-
         swap(cards[(rand() % 52)], cards[(rand() % 52)]);
     }
 }
 
-Card Deck::RemCard() {
-
+Card Deck::RemCard() { //Changes the place in the array where the cards will be given (begins at the right, moves toward the left)
         cardsLeft--;
         return cards[cardsLeft];
-
 }
 
 bool Deck::AddCard(Card c) {
-    if (cardsLeft < arraySize) { //If deck is full, subtract 1 extra to account for array logic
+    if (cardsLeft < arraySize) { //If the deck is not yet filled
         cards[++cardsLeft]=c;
             return true;
         }

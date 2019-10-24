@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
     cout << "Welcome to Blind Man's Bluff" << endl << endl;
-    bool play, invalid, guessedHigher;
+    bool play, invalid, guessedHigher, anyCardsLeft;
     string response;
     int nWin = 0, nLoss = 0, nTie = 0;
     Deck cardDeck; //Deck of 52 Cards
@@ -18,7 +18,8 @@ int main() {
     cardDeck.ShufDeck(); //Shuffle Deck
 
     play = true;
-    while(play) {
+    anyCardsLeft = true;
+    while(play && anyCardsLeft) {
         // assign values to computer and user
         compCard = cardDeck.RemCard();
         userCard = cardDeck.RemCard();
@@ -59,7 +60,7 @@ int main() {
 
         // ask user to play again
         invalid = true;
-        while(invalid) {
+        while(invalid && anyCardsLeft) {
             cout << "Play again? (Y/N)" << endl;
             cin >> response;
             if (toupper(response.at(0)) == 'Y') {
